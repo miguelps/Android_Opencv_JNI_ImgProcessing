@@ -24,7 +24,7 @@ void Java_opencvproject_com_JniImgProc_jniMatrix(JNIEnv *env, jobject obj,
     }
 
 
-    cv::cvtColor(img, img2, CV_BGR2GRAY);
+    cv::cvtColor(img, img2, cv::COLOR_BGR2GRAY);
     Canny(img2, img2, 100, 100, 3, true);
     cv::resize(img2, img2, cv::Size((width / cellWidth), (height / cellHeight)));
 
@@ -56,7 +56,7 @@ void Java_opencvproject_com_JniImgProc_jniGray(JNIEnv *env, jobject obj,
     cv::Mat img = *(cv::Mat*)matAddr;
     cv::Mat &targetImg = *(cv::Mat*)targetAddr;
 
-    cv::cvtColor(img, targetImg, CV_BGR2GRAY);
+    cv::cvtColor(img, targetImg, cv::COLOR_BGR2GRAY);
 
     int now;
     for (int x = 0; x < img.cols; ++x) {
