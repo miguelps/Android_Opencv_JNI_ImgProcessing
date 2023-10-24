@@ -58,6 +58,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
+import static org.opencv.imgproc.Imgproc.FONT_HERSHEY_COMPLEX_SMALL;
 import static org.opencv.imgproc.Imgproc.putText;
 
 public class ImgProcessing extends Fragment {
@@ -647,7 +648,7 @@ public class ImgProcessing extends Fragment {
                 double newi = i * cellWidth;
                 double newj = j * cellHeight;
                 if (k > threshold){
-                    putText(newImg, num, new Point(newi, newj), Core.FONT_HERSHEY_COMPLEX_SMALL, 0.4, new Scalar(0, 255, 0));
+                    putText(newImg, num, new Point(newi, newj), FONT_HERSHEY_COMPLEX_SMALL, 0.4, new Scalar(0, 255, 0));
                     num = (num.equals("0")?"1":"0");
                 }
             }
